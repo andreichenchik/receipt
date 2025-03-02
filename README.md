@@ -3,9 +3,6 @@
 ![image](https://github.com/user-attachments/assets/390ebc6b-0981-4a37-9f39-56281ccf40f2)
 
 
-## Project Overview
-Receipts is an iOS application developed to help expatriates and locals track and compare prices across different stores in Spain. The app streamlines the process of price comparison by automatically scanning and processing receipt data, enabling users to make informed purchasing decisions.
-
 ## Technical Stack
 - **Platform**: iOS (iPhone)
 - **Programming Language**: Swift
