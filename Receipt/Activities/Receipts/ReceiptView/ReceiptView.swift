@@ -23,6 +23,7 @@ extension ReceiptView {
         
         @ObservedObject var receipt: Receipt
         @StateObject var viewModel: ViewModel
+        @FocusState private var isTotalFocused: Bool
 
         init(receipt: Receipt, dataController: DataController) {
             let viewModel = ViewModel(receipt: receipt, dataController: dataController)
@@ -34,6 +35,7 @@ extension ReceiptView {
             ToolbarItem(placement: .primaryAction) {
                 if receipt.state == .draft {
                     Button(action: {
+                        isTotalFocused = false
                         viewModel.saveReceipt()
                         presentationMode.wrappedValue.dismiss()
                     }) {
@@ -100,6 +102,7 @@ extension ReceiptView {
                             .frame(width: 30)
 
                         TextField("Total amount", text: $viewModel.receiptTotal)
+                            .focused($isTotalFocused)
                             .keyboardType(.decimalPad)
 
                         Spacer()
